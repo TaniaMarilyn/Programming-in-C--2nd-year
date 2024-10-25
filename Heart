@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int row, col;
+    float dist;
+
+    for (row = 0; row <= 6; row++) {
+        for (col = 0; col <= 7; col++) {
+            dist = sqrt(pow(row - 3.5, 2) + pow(col - 3.5, 2));
+
+            if ((row == 0 && col % 3 != 0) ||
+                (row == 1 && col % 3 == 0) ||
+                (row - col == 2) ||
+                (row + col == 8)) {
+                printf("*");
+            } else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
